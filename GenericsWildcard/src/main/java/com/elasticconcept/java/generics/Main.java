@@ -16,12 +16,14 @@ public class Main {
 		
 		List<Tea> teas = new ArrayList<Tea>();
 		teas.add(new Tea());
-		//teas.add(new Coffee()); // It does not accept the coffee list
+		prepareDrinks(teas);
 		
-		//prepareDrinks(teas); // The method prepareDrinks(List<Drink>) in the type Main is not applicable for the arguments (List<Tea>)
+		List<Coffee> coffees = new ArrayList<Coffee>();
+		coffees.add(new Coffee());
+		prepareDrinks(coffees);
 	}
 	
-	private static void prepareDrinks(List<Drink> drinks) {
+	private static void prepareDrinks(List<? extends Drink> drinks) {
 		for (Drink b : drinks) {
 			b.prepare();
 		}
