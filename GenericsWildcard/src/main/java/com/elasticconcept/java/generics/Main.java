@@ -24,6 +24,13 @@ public class Main {
 	}
 	
 	private static void prepareDrinks(List<? extends Drink> drinks) {
+		
+		// You can NOT add elements to the list
+//		drinks.add(new Tea()); // The method add(capture#1-of ? extends Drink) in the type List<capture#1-of ? extends Drink> is not applicable for the arguments (Tea)
+		
+		// You can remove elements to the list
+//		drinks.remove(0);
+		
 		for (Drink b : drinks) {
 			b.prepare();
 		}
