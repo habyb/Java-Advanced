@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Buffer b = new Buffer();
+		Buffer<String> b = new Buffer<>();
 		
 		b.adicionar("a");
 		b.adicionar("b");
@@ -15,5 +15,17 @@ public class Main {
 		String e3 = b.remover();
 		
 		System.out.println(e1 + ", " + e2 + ", " + e3);
+		
+		Buffer<Integer> b2 = new Buffer<>();
+		
+		b2.adicionar(10);
+		b2.adicionar(20);
+		b2.adicionar(30);
+		
+		int e4 = b2.remover();
+		int e5 = b2.remover();
+		int e6 = b2.remover();
+		
+		System.out.println(e4 + ", " + e5 + ", " + e6);
 	}
 }

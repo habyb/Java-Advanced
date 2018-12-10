@@ -3,16 +3,16 @@ package com.elasticconcept.java.generics;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Buffer {
+public class Buffer<T> {
 
-	private List<String> list = new ArrayList<>();
+	private List<T> list = new ArrayList<>();
 	
-	public void adicionar(String elemento) {
+	public void adicionar(T elemento) {
 		list.add(elemento);
 	}
 	
-	public String remover() {
-		String elemento = list.get(0);
+	public T remover() {
+		T elemento = list.get(0);
 		list.remove(0);
 		return elemento;
 	}
