@@ -21,6 +21,11 @@ public class Main {
 		List<Coffee> coffees = new ArrayList<Coffee>();
 		coffees.add(new Coffee());
 		prepareDrinks(coffees);
+		
+//		prepareDrinks2(coffees); // Not allowed
+		prepareDrinks2(teas);
+//		prepareDrinks2(drinks); // Pay attention! You can NOT coffee list
+//		prepareDrinks2(coffees); // Pay attention! You can NOT coffee list
 	}
 	
 	private static void prepareDrinks(List<? extends Drink> drinks) {
@@ -33,6 +38,27 @@ public class Main {
 		
 		for (Drink b : drinks) {
 			b.prepare();
+		}
+	}
+	
+	private static void prepareDrinks2(List<? super Tea> drinks) {
+//		drinks.add(new Tea()); // No problem
+		
+		// Pay attention! You can NOT coffee list
+		for (Object obj : drinks) {
+			Tea tea = (Tea) obj;
+			tea.prepare();
+		}
+	}
+	
+	private static void prepareDrinks3(List<?> drinks) { // <? extends Object>
+		
+		// You can NOT add elements to the list (extends rule)
+//		drinks.add("abc"); // Not secure
+		
+		for (Object obj : drinks) {
+			Tea tea = (Tea) obj;
+			tea.prepare();
 		}
 	}
 }
