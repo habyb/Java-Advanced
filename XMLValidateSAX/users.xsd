@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.elasticconcept.com/java/xml"
+	xmlns="http://www.elasticconcept.com/java/xml">
+	
+	<xsd:element name="name">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="30" />
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	
+	<xsd:element name="age" type="xsd:integer" />
+	<xsd:element name="email" type="xsd:string" />
+	
+	<xsd:element name="user">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="name" minOccurs="1" maxOccurs="1" />
+				<xsd:element ref="age" minOccurs="1" maxOccurs="1" />
+				<xsd:element ref="email" minOccurs="1" maxOccurs="1" />
+			</xsd:sequence>
+			<xsd:attribute type="xsd:string" name="id" use="required" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="users">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="user" minOccurs="1" maxOccurs="unbounded" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

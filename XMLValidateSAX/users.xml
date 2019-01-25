@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<users xmlns="http://www.elasticconcept.com/java/xml"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.elasticconcept.com/java/xml users.xsd">
+	
+	<user id="1">
+		<name>John Doe Fiancé</name>
+		<age>30</age>
+		<email>john@xyz.com</email>
+	</user>
+	
+	<user id="2">
+		<name>Mary Kate</name>
+		<age>20</age>
+		<email>mary@xyz.com</email>
+	</user>
+</users>
